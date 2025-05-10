@@ -1,40 +1,3 @@
-// import React from 'react'
-// import Footer from '../component/common/Footer'
-// import ReviewSlider from '../component/common/ReviewSlider'
-// import ContactDetails from '../component/core/ContactUsPage/ContactDetails'
-// import ContactForm from '../component/core/ContactUsPage/ContactForm'
-
-// const Contact = () => {
-//   return (
-//     <div>
-//          <div className='mx-auto mt-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-white lg:flex-row'>
-//             {/* Contact Details */}
-//             <div className='lg:w-[40%]'>
-//                 <ContactDetails/>
-//             </div>
-
-//             {/* Contact Form */}
-//             <div className='lg:w-[60%]'>
-//                 <ContactForm/>
-//             </div>
-//          </div>
-
-//          <div className='relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-richblue-900 text-white'>
-//             {/* Reviews from other Learner */}
-//             <h1 className='text-center text-4xl font-semibold mt-8'>
-//                 Reviews from other learners
-//             </h1>
-//             <ReviewSlider/>
-//          </div>
-//          <Footer/>
-//     </div>
-//   )
-// }
-
-// export default Contact
-
-
-
 import React from 'react'
 import { BsFillChatRightDotsFill } from 'react-icons/bs';
 import { BsGlobeAmericas } from 'react-icons/bs';
@@ -47,12 +10,12 @@ const ContactPage = () => {
         {
             title:"Chat on us",
             desc:"Our friendly team is here to help.",
-            address:"info@studynotion.com"
+            address:"info@LearningPoint.com"
         },
         {
             title:"Visit us",
             desc:"Come and say hello at our office HQ.",
-            address:"Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016"
+            address:"112/367, Thadi Market, Mansarovar, Jaipur, Rajasthan. 302020 "
         },
         {
             title:"Call us",

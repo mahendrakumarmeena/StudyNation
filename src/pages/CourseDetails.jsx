@@ -173,7 +173,9 @@ const CourseDetails = () => {
                 <div className="flex flex-wrap gap-5 text-lg">
                   <p className="flex items-center gap-2">
                     {" "}
-                    <BiInfoCircle /> Created at {formatDate(createdAt)}
+                    <BiInfoCircle /> 
+                          Created at 
+                    {formatDate(createdAt)}
                   </p>
                   <p className="flex items-center gap-2">
                     {" "}

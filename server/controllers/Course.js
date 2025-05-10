@@ -199,7 +199,9 @@ exports.editCourse = async (req, res) => {
   }
 };
 
+
 exports.getAllCourses = async (req, res) => {
+
   try {
     const allCourses = await Course.find(
       { status: "Published" },
@@ -290,6 +292,8 @@ exports.getCourseDetails = async (req, res) => {
     });
   }
 };
+
+
 exports.getFullCourseDetails = async (req, res) => {
   try {
     const { courseId } = req.body;
@@ -391,7 +395,8 @@ exports.deleteCourse = async (req, res) => {
 
     const course = await Course.findById(courseId);
     if (!course) {
-      return res.status(404).json({ message: "Course not found" });
+      return res.status(404).json({ 
+        message: "Course not found" });
     }
 
     const studentsEnrolled = course.studentsEnroled;

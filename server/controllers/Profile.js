@@ -31,7 +31,7 @@ const updateProfile = async (req, res) => {
     }
     // console.log("user ",userDetails);
     const profile = await Profile.findById(userDetails.additionalDetails);
-    console.log("profile ",profile);
+    // console.log("profile ",profile);
     if (!profile) {
       return res.status(404).json({
         success: false,
@@ -133,7 +133,7 @@ const deleteAccount = async (req, res) => {
 
       //get id 
       const id = req.user.id
-      console.log("id ",id);
+      // console.log("id ",id);
 
       //validation and get user details
       const userDetails = await User.findById(id)
@@ -161,7 +161,7 @@ const deleteAccount = async (req, res) => {
 
       //Validaate file existencec
       const displayPicture = req.files.displayPicture;
-      console.log("Update ",displayPicture);
+      // console.log("Update ",displayPicture);
       if(!displayPicture){
          return res.status(400).json({
             success:false,
@@ -179,7 +179,7 @@ const deleteAccount = async (req, res) => {
         1000,
         1000
       );
-      console.log("image ",image);
+      // console.log("image ",image);
 
       //Update user profile with new image URL
       const updatedProfile = await User.findByIdAndUpdate(

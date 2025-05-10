@@ -1,4 +1,5 @@
-import logo from "../../Asset/Logo/Logo-Full-Light.png";
+import logo from "../../Asset/Logo/LP.jpg";
+import logo1 from '../../Asset/Logo/LearningPoint-2-5-2025 (1).jpg'
 import  NavbarLinks  from "../../data/Navbar-Link";
 import { logout } from "../../services copy/Opreration/authAPI";
 import  apiConnector  from "../../services copy/apiconnector";
@@ -66,8 +67,11 @@ function Navbar() {
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
         
         {/* Logo */}
-        <Link to="/">
-          <img src={logo} alt="Logo" width={160} height={32} loading="lazy" />
+        <Link to="/" className="flex gap-2">
+          <img src={logo} alt="Logo" width={60} height={32} loading="lazy" className="rounded-full" />
+          {/* <img src={logo1} alt="Logo" width={160} height={24} loading="lazy" /> */}
+          {/* <p className="text-3xl bg-white font-bold rounded-2xl"></p> */}
+          <p className="text-2xl text-white shadow-md font-bold">LearningPoint</p>
         </Link>
         
         {/* Navigation links */}

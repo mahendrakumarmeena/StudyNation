@@ -26,30 +26,49 @@ export default function NestedView({ handleChangeEditSectionName }) {
   // to keep track of confirmation modal
   const [confirmationModal, setConfirmationModal] = useState(null)
 
-  const handleDeleleSection = async (sectionId) => {
-    const result = await deleteSection({
-      sectionId,
-      courseId: course._id,
-      token,
-    })
-    if (result) {
-      dispatch(setCourse(result))
+  const handleDeleteSection = async (sectionId) => {
+    try {
+      const result = await deleteSection({
+        sectionId,
+        courseId: course._id,
+        token,
+      });
+  
+      if (result) {
+        dispatch(setCourse(result));
+      } else {
+        console.error('Failed to delete section. No result returned.');
+      }
+    } catch (error) {
+      console.error('Error deleting section:', error);
+    } finally {
+      setConfirmationModal(null);
     }
-    setConfirmationModal(null)
-  }
+  };
+  
 
   const handleDeleteSubSection = async (subSectionId, sectionId) => {
-    const result = await deleteSubSection({ subSectionId, sectionId, token })
-    if (result) {
-      // update the structure of course
-      const updatedCourseContent = course.courseContent.map((section) =>
-        section._id === sectionId ? result : section
-      )
-      const updatedCourse = { ...course, courseContent: updatedCourseContent }
-      dispatch(setCourse(updatedCourse))
+    try {
+      const result = await deleteSubSection({ subSectionId, sectionId, token });
+  
+      if (result) {
+        // Assuming 'result' is the updated section after deletion
+        const updatedCourseContent = course.courseContent.map((section) =>
+          section._id === sectionId ? result : section
+        );
+  
+        const updatedCourse = { ...course, courseContent: updatedCourseContent };
+        dispatch(setCourse(updatedCourse));
+      } else {
+        console.error('Failed to delete sub-section. No result returned.');
+      }
+    } catch (error) {
+      console.error('Error deleting sub-section:', error);
+    } finally {
+      setConfirmationModal(null);
     }
-    setConfirmationModal(null)
-  }
+  };
+  
 
   return (
     <>
@@ -86,7 +105,7 @@ export default function NestedView({ handleChangeEditSectionName }) {
                       text2: "All the lectures in this section will be deleted",
                       btn1Text: "Delete",
                       btn2Text: "Cancel",
-                      btn1Handler: () => handleDeleleSection(section._id),
+                      btn1Handler: () => handleDeleteSection(section._id),
                       btn2Handler: () => setConfirmationModal(null),
                     })
                   }
@@ -131,7 +150,7 @@ export default function NestedView({ handleChangeEditSectionName }) {
                           btn2Text: "Cancel",
                           btn1Handler: () =>
                             handleDeleteSubSection(data._id, section._id),
-                          btn2Handler: () => setConfirmationModal(null),
+                             btn2Handler: () => setConfirmationModal(null),
                         })
                       }
                     >

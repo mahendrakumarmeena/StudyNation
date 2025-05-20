@@ -40,7 +40,7 @@ const auth = async (req, res, next) => {
 			req.user = decode;
 		} 
 		catch(error){
-            console.log("ERROR INTERVERl")
+            console.log("ERROR INTERVERl mistake")
 			//IF JWT verification fails, return 401 Unauthprized response
 			return res.status(401).json({ 
 				success: false,

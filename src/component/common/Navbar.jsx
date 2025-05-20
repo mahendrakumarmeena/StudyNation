@@ -1,5 +1,6 @@
 import logo from "../../Asset/Logo/LP.jpg";
 import logo1 from '../../Asset/Logo/LearningPoint-2-5-2025 (1).jpg'
+import logo2 from '../../Asset/Logo/Screenshot 2025-05-17 160428.png'
 import  NavbarLinks  from "../../data/Navbar-Link";
 import { logout } from "../../services copy/Opreration/authAPI";
 import  apiConnector  from "../../services copy/apiconnector";
@@ -43,7 +44,7 @@ function Navbar() {
                   
                   const res = await apiConnector("GET", categories.CATEGORIES_API);
                   setSubLinks(res.data.data);
-                  // console.log("sublinks ",subLinks);
+                  console.log("sublinks ",setSubLinks(res.data.data));
                 } catch (error) {
                   console.log("Could not fetch Categories.", error);
                 }
@@ -68,7 +69,7 @@ function Navbar() {
         
         {/* Logo */}
         <Link to="/" className="flex gap-2">
-          <img src={logo} alt="Logo" width={60} height={32} loading="lazy" className="rounded-full" />
+          <img src={logo2} alt="Logo" width={40} height={32} loading="lazy" className="rounded-full mr-1  " />
           {/* <img src={logo1} alt="Logo" width={160} height={24} loading="lazy" /> */}
           {/* <p className="text-3xl bg-white font-bold rounded-2xl"></p> */}
           <p className="text-2xl text-white shadow-md font-bold">LearningPoint</p>

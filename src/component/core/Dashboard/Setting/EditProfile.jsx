@@ -44,7 +44,7 @@ export default function EditProfile() {
                   name='firstName'
                   placeholder='Enter first name'
                   defaultValue={user?.firstName}
-                  className='form-style w-full placeholder:uppercase placeholder:text-sm placeholder:tracking-wider'
+                  className='form-style w-full placeholder:uppercase placeholder:text-sm placeholder:tracking-wider text-richblack-800'
                   {...register('firstName', { required: true })}
                 />
 
@@ -61,7 +61,7 @@ export default function EditProfile() {
                   name='lastName'
                   placeholder='Enter last name'
                   defaultValue={user?.lastName}
-                  className='form-style w-full placeholder:uppercase placeholder:text-sm placeholder:tracking-wider'
+                  className='form-style w-full placeholder:uppercase placeholder:text-sm placeholder:tracking-wider text-richblack-800'
                   {...register('lastName', { required: true })}
                 />
 
@@ -81,7 +81,7 @@ export default function EditProfile() {
                   max={new Date().toISOString().split('T')[0]}
                   placeholder='Enter first name'
                   defaultValue={user?.profile?.dob?.split('T')[0]}
-                  className='form-style w-full '
+                  className='form-style w-full text-richblack-800 '
                   {...register('dob', {
                     required: {
                       value: true,
@@ -105,14 +105,14 @@ export default function EditProfile() {
                 <select
                   type='text'
                   name='gender'
-                  className='form-style w-full'
+                  className='form-style w-full text-richblack-600'
                   defaultValue={user?.profile?.gender}
                   {...register('gender', { required: true })}
                 >
 
                   {
                     genders.map((gender, ind) => (
-                      <option className='text-richblack-5' key={ind} value={gender} > {gender} </option>
+                      <option className='text-richblack-400' key={ind} value={gender} > {gender} </option>
                     ))
                   }
                 </select>
@@ -128,7 +128,7 @@ export default function EditProfile() {
                   name='contactNumber'
                   placeholder='Enter contact number'
                   defaultValue={user?.profile?.contactNumber}
-                  className='form-style w-full placeholder:uppercase placeholder:text-sm placeholder:tracking-wider'
+                  className='form-style w-full placeholder:uppercase placeholder:text-sm placeholder:tracking-wider text-richblack-800'
                   {...register('contactNumber', {
                     required: {
                       value: true,
@@ -158,7 +158,7 @@ export default function EditProfile() {
                   name='about'
                   placeholder='Enter Bio Detail'
                   defaultValue={user?.profile?.about}
-                  className='form-style w-full placeholder:uppercase placeholder:text-sm placeholder:tracking-wider'
+                  className='form-style w-full placeholder:uppercase placeholder:text-sm placeholder:tracking-wider text-richblack-800'
                   {...register('about', { required: true })}
                 />
 

@@ -1,13 +1,21 @@
 import React from 'react'
 
-const IconBtn = ({ ...btnData }) => {
+const IconBtn = ({ 
+      text,
+      onclick,
+      children,
+      outline = false,
+      customClasses,
+      type,
+      disabled,
+ }) => {
 
-  const { children, text, onClickHandler, disabled, outline = false, customClasses, type } = btnData;
+  // const { children, text, onClickHandler, disabled, outline = false, customClasses, type } = btnData;
 
   return (
     <div className='text-white' >
       <button
-        onClick={onClickHandler}
+        onClick={onclick}
         disabled={disabled}
         type={type}
         className={` ${customClasses} rounded-md py-1 px-2 font-semibold text-richblack-900 uppercase tracking-wider

@@ -15,6 +15,8 @@ exports.updateCourseProgress = async (req, res) => {
         error: "Invalid subsection",
       });
     }
+
+    // check for old entry
     let courseProgress = await CourseProgress.findOne({
       courseID: courseId,
       userId: userId,
@@ -24,14 +26,19 @@ exports.updateCourseProgress = async (req, res) => {
         success: false,
         message: "Course progress Does Not Exist",
       });
-    } else {
+    }
+    else {
+      // check for re-completing video/subsection
       if (courseProgress.completedVideos.includes(subsectionId)) {
         return res.status(400).json({
           error: "Subsection already completed",
         });
       }
+
+      // push into completed video
       courseProgress.completedVideos.push(subsectionId);
     }
+    
     await courseProgress.save();
     return res.status(200).json({
       message: "Course progress updated",

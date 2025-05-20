@@ -187,12 +187,13 @@ const CourseDetails = () => {
                 <p className="space-x-3 pb-4 text-3xl font-semibold text-richblack-5">
                   Rs. {price}
                 </p>
-                <button className="yellowButton uppercase tracking-wider" onClick={handleBuyCourse}>
+                <button className="yellowButton uppercase tracking-wider md:text-white" onClick={handleBuyCourse}>
                   Buy Now
                 </button>
-                <button className="blackButton uppercase tracking-wider">Add to Cart</button>
+                <button className="blackButton uppercase tracking-wider ">Add to Cart</button>
               </div>
             </div>
+           
             {/* Courses Card */}
             <div className="right-[1rem] top-[60px] mx-auto hidden min-h-[600px] w-1/3 max-w-[410px] translate-y-24 md:translate-y-0 lg:absolute  lg:block">
               <CourseDetailsCard

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import Spinner from '../../common/Spinner'
 import { fetchInstructorCourses } from "../../../services copy/Opreration/courseDetailsAPI"
-import  getInstructorData  from "../../../services copy/Opreration/pageAndComponntDatas"
+import { getInstructorData } from '../../../services copy/Opreration/profileAPI'
 import InstructorChart from "./InstructorDeshboard/InstructorChart"
 
 const Instructor = () => {
@@ -44,7 +44,8 @@ const Instructor = () => {
   )
  
   return (
-    <div>
+    <div className='text-white'>
+      {/* HEllo */}
       <div className='space-y-2' >
         <p className='text-richblack-5 text-2xl font-bold ' >Hi, {user.firstName} 👋 </p>
         <p className='text-richblack-200 font-medium ' >Let's start something new</p>
@@ -70,9 +71,9 @@ const Instructor = () => {
               :
               (
                 <div>
-                  {/* Pie charts and Stats */}
+                  Pie charts and Stats
                   <div className='flex flex-col md:flex-row gap-5 my-10' >
-                    {/* Pie charts */}
+                    Pie charts
                     <div className='w-full' >
                       {
                         (totalAmount > 0 || totalStudents > 0)
@@ -91,7 +92,7 @@ const Instructor = () => {
                           )
                       }
                     </div>
-                    {/* Statistics */}
+                    Statistics
                     <div className='min-h-fit min-w-[250px] rounded-md bg-richblack-800 p-6' >
                       <p className='text-lg font-bold text-richblack-5' >Statistics</p>
 
@@ -114,7 +115,7 @@ const Instructor = () => {
                     </div>
                   </div>
 
-                  {/* Published Courses */}
+                  Published Courses
                   <div className='w-full rounded-md bg-richblack-800 p-6' >
                     <div className='flex justify-between items-center' >
                       <p className='text-richblack-5 text-lg font-bold' >Your Published Courses</p>

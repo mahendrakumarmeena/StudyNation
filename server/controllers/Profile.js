@@ -281,6 +281,7 @@ const isInstructorDashboard = async (req, res) => {
       const totalStudentsEnrolled = course.studentsEnroled.length;
       const totalAmountGenerated = totalStudentsEnrolled * course.price;
 
+      // create an new object with the additional fields
       const courseDataWithStats = {
         _id: course._id,
         courseName: course.courseName,

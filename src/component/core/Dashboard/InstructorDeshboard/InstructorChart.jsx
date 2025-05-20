@@ -46,6 +46,7 @@ const InstructorChart = ({courses}) => {
     ],
   }
   // console.log("chartIncomeData",chartIncomeData)
+  
   // Options for the chart
   const options = {
     maintainAspectRatio: false,
